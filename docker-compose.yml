@@ -1,0 +1,30 @@
+services:
+  php:
+    image: serversideup/php:7.4-fpm-nginx
+    container_name: kellogg
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - SSL_MODE=off
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: kellogg-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
