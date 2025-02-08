@@ -1,7 +1,9 @@
 services:
   php:
-    image: serversideup/php:7.4-fpm-nginx
-    container_name: kellogg
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pharaon
     restart: unless-stopped
     ports:
       - "8080:8080"
@@ -14,7 +16,7 @@ services:
 
   mysql:
     image: mysql:8.0
-    container_name: kellogg-mysql
+    container_name: pharaon-mysql
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
