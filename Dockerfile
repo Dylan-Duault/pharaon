@@ -1,4 +1,4 @@
-FROM serversideup/php:7.4-fpm-nginx
+FROM serversideup/php:8.3-fpm-nginx
 
 USER root
 
