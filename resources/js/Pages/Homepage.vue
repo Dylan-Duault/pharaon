@@ -1,27 +1,14 @@
 <script setup lang="ts">
 import { Head, Link } from '@inertiajs/vue3';
-import GuestLayout from '../Layouts/GuestLayout.vue';
 import OurPrograms from '../Components/OurPrograms.vue';
 import ContactForm from '../Components/ContactForm.vue';
+import DefaultLayout from '@/Layouts/DefaultLayout.vue';
 
-defineProps<{
-    canLogin?: boolean;
-    canRegister?: boolean;
-    laravelVersion: string;
-    phpVersion: string;
-}>();
-
-function handleImageError() {
-    document.getElementById('screenshot-container')?.classList.add('!hidden');
-    document.getElementById('docs-card')?.classList.add('!row-span-1');
-    document.getElementById('docs-card-content')?.classList.add('!flex-row');
-    document.getElementById('background')?.classList.add('!hidden');
-}
 </script>
 
 <template>
     <Head title="Welcome" />
-    <GuestLayout>
+    <DefaultLayout>
         <el-container class="container-padding bg-yellow">
             <el-main>
                 <el-row class="mb-6">
@@ -106,39 +93,10 @@ function handleImageError() {
                 </el-row>
             </el-main>
         </el-container>
-    </GuestLayout>
+    </DefaultLayout>
 </template>
 
 <style scoped>
-
-.bg-yellow-darker {
-    background-color: #ffe0af;
-}
-
-.bg-yellow {
-    background-color: #ffeed4;
-}
-
-.yellow-card {
-    background-color: #ffeed4;
-    border-color: #ffe0af;
-
-    h3 {
-        color: rgb(113 63 18 / var(--tw-text-opacity, 1))
-    }
-
-    p {
-        color: rgb(161 98 7 / var(--tw-text-opacity, 1))
-    }
-}
-
-.container-padding {
-    padding: 64px 1rem 64px 1rem;
-
-    @media screen and (min-width: 992px) {
-        padding: 64px 10rem 64px 10rem;
-    }
-}
 
 #couple-image {
     max-width: 300px;

@@ -30,6 +30,10 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+
+        // Registration is disabled
+        abort(403, 'Registration currently disabled. The dashboard is only MIIIIIIINE!!!');
+
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,

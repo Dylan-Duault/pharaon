@@ -45,7 +45,7 @@
                 v-for="program in programs"
                 :key="program.id"
                 :label="program.name"
-                :value="program.id"
+                :value="program.name"
               />
             </el-select>
           </el-form-item>
@@ -77,8 +77,9 @@
   </template>
   
   <script lang="ts" setup>
-  import { reactive, ref } from 'vue'
+  import { ref } from 'vue'
   import type { FormInstance, FormRules } from 'element-plus'
+  import { useForm } from '@inertiajs/vue3'
   
   const programs = ref([
     {
@@ -105,19 +106,19 @@
 
   const formRef = ref<FormInstance>()
   
-  const form = reactive({
+  const form = useForm({
     firstname: '',
     lastname: '',
     email: '',
     daterange: null as [Date, Date] | null,
-    program: null as number | null,
+    program: '' as string,
     moreInfo: '',
   })
 
   const minDepartureDate = new Date()
   minDepartureDate.setDate(minDepartureDate.getDate() + 7)
 
-  const rules = reactive<FormRules>({
+  const rules = ref<FormRules>({
     firstname: [
       { required: true, message: 'Please input your first name', trigger: 'blur' },
       { min: 2, message: 'Length should be at least 2 characters', trigger: 'blur' },
@@ -165,8 +166,14 @@
     
     await formRef.value.validate((valid, fields) => {
       if (valid) {
-        console.log('Form submitted:', form)
-        // Here you would typically send the form data to your backend
+        form.post(route('contact.store'), {
+          onError: (errors) => {
+            console.error('Form submission failed:', errors)
+          },
+          onSuccess: () => {
+            formRef.value?.resetFields()
+          },
+        })
       } else {
         console.error('Form validation failed:', fields)
       }
@@ -176,6 +183,7 @@
   const resetForm = () => {
     if (!formRef.value) return
     formRef.value.resetFields()
+    form.reset()
   }
   </script>
 

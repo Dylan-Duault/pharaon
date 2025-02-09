@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -14,6 +15,8 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 })->name('home');
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

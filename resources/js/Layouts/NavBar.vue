@@ -6,7 +6,7 @@
       :ellipsis="false"
       @select="handleSelect"
     >
-      <el-menu-item index="0">
+      <el-menu-item index="/">
         <img
           style="width: 40px"
           src="/images/logo.png"
@@ -14,12 +14,12 @@
         />
       </el-menu-item>
       <el-menu-item index="/">Home</el-menu-item>
-      <el-sub-menu v-if="!$page.props.auth.user" index="">
+      <!-- <el-sub-menu v-if="!$page.props.auth.user" index="">
         <template #title>User</template>
         <el-menu-item index="login">Login</el-menu-item>
         <el-menu-item index="register">Register</el-menu-item>        
-      </el-sub-menu>
-      <el-menu-item v-else index="dashboard">Dashboard</el-menu-item>
+      </el-sub-menu> -->
+      <el-menu-item v-if="$page.props.auth.user" index="dashboard">Dashboard</el-menu-item>
     </el-menu>
   </template>
   
