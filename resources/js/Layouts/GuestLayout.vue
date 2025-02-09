@@ -10,24 +10,8 @@ import Footer from '@/Components/Footer.vue'
     <el-affix :offset="0">
         <NavBar/>
     </el-affix>
-    <div class="common-layout">
-        <el-container>
-            <el-main>
-                <slot />
-            </el-main>
-        </el-container>
+    <div>
+        <slot />
     </div>
     <Footer/>
 </template>
-
-<style>
-.common-layout {
-    padding: 1rem;
-}
-
-@media screen and (min-width: 992px) {
-    .common-layout {
-        padding: 64px 10rem 64px 10rem;
-    }
-}
-</style>
