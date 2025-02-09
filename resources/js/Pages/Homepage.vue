@@ -39,8 +39,10 @@ function handleImageError() {
         <el-container class="container-padding bg-yellow-darker">
             <el-main>
                 <el-row class="mb-6">
-                    <el-col :span="24" class="text-center">
-                        <h2 class="text-3xl font-bold text-yellow-900 mb-20">Why Choose us?</h2>
+                    <el-col :span="18" class="pe-6">
+                        <h2 class="mb-4 text-3xl font-bold text-yellow-900">Why Choose us?</h2>
+                        <p class="mb-6 text-lg font-normal text-yellow-700 lg:text-xl">We offer more than just a trip, we create unforgettable experiences. Travel with us and uncover the wonders of Ancient Egypt like never before!</p>
+
                         <el-row :gutter="20" class="mb-5">
                             <el-col :span="12">
                                 <el-card shadow="hover" class="h-full yellow-card">
@@ -77,6 +79,9 @@ function handleImageError() {
                                 </el-card>
                             </el-col>
                         </el-row>
+                    </el-col>
+                    <el-col :span="6" class="ps-6">
+                        <el-image class="h-full w-full" src="/images/illustrations/couple.png" :fit="'cover'"></el-image>
                     </el-col>
                 </el-row>
             </el-main>
