@@ -6,8 +6,8 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createApp, DefineComponent, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 
-import components from './Components/index.ts';
-import ElementPlus from './element-plus.ts'
+import components from './Components/index';
+import ElementPlus from './element-plus';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 

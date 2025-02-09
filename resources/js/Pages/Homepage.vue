@@ -2,6 +2,7 @@
 import { Head, Link } from '@inertiajs/vue3';
 import GuestLayout from '../Layouts/GuestLayout.vue';
 import OurPrograms from '../Components/OurPrograms.vue';
+import ContactForm from '../Components/ContactForm.vue';
 
 defineProps<{
     canLogin?: boolean;
@@ -92,9 +93,15 @@ function handleImageError() {
         </el-container>
         <el-container class="container-padding bg-yellow">
             <el-main>
-                <el-row class="mb-6">
-                    <el-col :span="24">
-                        <OurPrograms />
+                <el-row>
+                    <el-col :span="8">
+                        <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-yellow-900">Book Now!</h1>
+                        <p class="mb-6 text-lg font-normal text-yellow-700 lg:text-xl">It's time to make your dream a reality!</p>
+                    </el-col>
+                    <el-col :span="16">
+                        <el-card>
+                            <ContactForm />
+                        </el-card>
                     </el-col>
                 </el-row>
             </el-main>
