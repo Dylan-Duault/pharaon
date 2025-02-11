@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactFormRequest;
+use App\Http\Resources\ContactFormResource;
 use App\Models\ContactForm;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -28,5 +28,13 @@ class ContactController extends Controller
         ContactForm::create($formData);
 
         return Inertia::render('ContactRequestValidated', ['success' => 'Thank you for your inquiry! We will get back to you soon.']);
+    }
+
+    public function index(): Response
+    {
+        ContactFormResource::withoutWrapping();
+        return Inertia::render('Authenticated/ContactForms/Index', [
+            'contactForms' => ContactFormResource::collection(ContactForm::all())
+        ]);
     }
 }

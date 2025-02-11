@@ -6,7 +6,6 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createApp, DefineComponent, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 
-import components from './Components/index';
 import ElementPlus from './element-plus';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
@@ -19,7 +18,7 @@ createInertiaApp({
             import.meta.glob<DefineComponent>('./Pages/**/*.vue'),
         ),
     setup({ el, App, props, plugin }) {
-        createApp({ components, render: () => h(App, props) })
+        createApp({render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
             .use(ElementPlus)

@@ -10,7 +10,7 @@
         <img
           style="width: 40px"
           src="/images/logo.png"
-          alt="Element logo"
+          alt="Pharaon"
         />
       </el-menu-item>
       <el-menu-item index="/">Home</el-menu-item>
