@@ -82,8 +82,12 @@ import DefaultLayout from '@/Layouts/DefaultLayout.vue';
             <el-main>
                 <el-row>
                     <el-col :span="8">
-                        <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-yellow-900">Book Now!</h1>
-                        <p class="mb-6 text-lg font-normal text-yellow-700 lg:text-xl">It's time to make your dream a reality!</p>
+                        <h1 class="mb-6 text-4xl font-extrabold leading-none tracking-tight text-yellow-900">Book Now!</h1>
+                        <p class="mb-4 pe-6 text-lg font-normal text-yellow-700 lg:text-xl">We turn your dream of exploring Ancient Egypt into reality.</p>
+                        <p class="mb-4 pe-6 text-lg font-normal text-yellow-700 lg:text-xl">Our expert Egyptologists guide you through the country’s most iconic sites, offering deep insights into its fascinating history.</p>
+                        <p class="mb-4 pe-6 text-lg font-normal text-yellow-700 lg:text-xl">Whether you prefer a carefully planned itinerary or a fully customized experience, we tailor every trip to your needs.<br />Enjoy top-tier accommodations in luxury hotels and cruise boats, ensuring comfort throughout your journey.</p>
+                        <p class="mb-4 pe-6 text-lg font-normal text-yellow-700 lg:text-xl">Plus, gain exclusive access to historical sites for a truly unique adventure.<br />Travel with us and experience Egypt like never before!</p>
+
                     </el-col>
                     <el-col :span="16">
                         <el-card>
