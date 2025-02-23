@@ -3,6 +3,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
 interface IContactForm {
+    id: number;
     fullname: string;
     email: string;
     trip_dates: string;
